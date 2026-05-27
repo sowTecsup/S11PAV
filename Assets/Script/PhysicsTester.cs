@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-using System.Diagnostics;
 using System.Linq;
 
 public class PhysicsTester : MonoBehaviour
@@ -23,41 +22,8 @@ public class PhysicsTester : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Stopwatch sw = Stopwatch.StartNew();
-        ReadAllText();
-        sw.Stop();
-        UnityEngine.Debug.Log($"Function took: {sw.ElapsedMilliseconds}ms ({sw.Elapsed.TotalMilliseconds}ms high precision)");
     }
-    public void ReadAllText()
-    {
-        for (int i = 0; i < 7000000000; i++)
-        {
-            string word = "asdas";
-            wordDatabase.Add(word, word.Length);
-        }
 
-
-
-
-
-
-        if(wordDatabase.TryGetValue("manolo",out int value))
-        {
-            print("has ganado! " + value + "puntos");
-        }
-        else
-        {
-            print("la palabra no existe");
-        }
-
-
-
-        allWodrs.Contains("hola");
-        //->
-        //->santo for 1s 3 - 4 - 5  6 
-        //->
-
-    }
 
     // Update is called once per frame
     private void FixedUpdate()
